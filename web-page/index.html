@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voicepedia</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="topnav">
+        <div class="left">
+            <span class="pink" style="font-family:Berlin Sans FB Demi; font-size: 40px">Voice</span><span class="white" style="font-family:Berlin Sans FB Demi; font-size: 40px">pedia</span>
+        </div>
+        <div class="right">
+            <button onclick="copyLink()">Share</button>
+        </div>
+    </div>
+    <div class="pink-section"></div>
+
+
+    <div class="container">
+        <div class="table-container">
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">
+                            <h1 style="font-family:Berlin Sans FB Demi; font-size: 40px; color: rgb(28, 28, 186); margin-bottom: 1px;">Have your best chat</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <h2 style="font-family:Berlin Sans FB Demi; font-size: 25px; color: rgb(28, 28, 186); margin-top: 1px;">Search the web with your voice</h2>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">
+                            <a href="#image-section"><button class="button" style="font-size: 24px;padding: 20px 30px; background:  rgb(225, 107, 197); color: white; border: none; border-radius: 10px; cursor: pointer;">Begin</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table style="width: 100%;">
+                <tbody>
+                    <tr>
+                        <td><img src="https://img.redbull.com/images/c_crop,x_408,y_0,h_608,w_486/c_fill,w_450,h_600/q_auto:low,f_auto/redbullcom/2018/04/05/a4eb6896-93b2-4acf-90f3-624bc2e16343/tecnologia-chatbot" alt="mic" width="200" height="230"></td>
+                        <td><img src="files/coment1.png" alt="coment" height="130" width="250"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="files/coment2.png" alt="coment2" height="130" width="250"></td>
+                        <td><img src="https://st.depositphotos.com/1743476/1276/i/450/depositphotos_12760579-stock-photo-laughing-smiling-aged-woman.jpg" alt="foto2" height="200" width="300"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function copyLink() {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+            alert("Link copied to clipboard: " + window.location.href);
+        }
+    </script>
+
+
+    <div class="container2" id="image-section">
+        <div class="iphone-container">
+            <img src="files/ph.png" alt="iphone" width="1200" height="650" class="overlay-image">
+            <div class="button-container">
+                <div class="button2">
+                    <br><br><br>
+                    <img src="files/mic.png" alt="notw" width="60" height="60" onclick="record_audio">
+                    <img src="files/start.png" alt="start" width="140" height="70">
+                </div>
+                <div class="button-container-below">
+                    <!-- Aquí van los botones que quieres colocar debajo del botón del micrófono -->
+                    <button id="startRecording">Comenzar a Grabar</button>
+                    <button id="stopRecording" disabled>Detener Grabación</button>
+                    <br><br>
+                    <audio id="recordedAudio" controls></audio>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>
